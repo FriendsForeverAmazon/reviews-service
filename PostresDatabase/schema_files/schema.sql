@@ -1,10 +1,17 @@
-CREATE SCHEMA reviews;
+DROP DATABASE IF EXISTS sdc;
 
-/connect reviews
-DROP SCHEMA reviews CASCADE;
+CREATE DATABASE sdc;
+
+use sdc;
+
+-- CREATE SCHEMA reviews;
+
+-- /connect reviews
+-- DROP SCHEMA reviews CASCADE;
 
 CREATE TABLE products (
-  id INT CONSTRAINT PRIMARY,
+  id SERIAL UNIQUE PRIMARY KEY,
+  productName VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE reviews (
