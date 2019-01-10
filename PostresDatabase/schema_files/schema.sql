@@ -1,5 +1,6 @@
 CREATE SCHEMA reviews;
 
+/connect reviews
 DROP SCHEMA reviews CASCADE;
 
 CREATE TABLE products (
