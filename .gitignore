@@ -5,3 +5,5 @@ public/bundle.js
 .DS_STORE
 write.csv
 .write.csv.swp
+product.tsv
+review.tsv
