@@ -18,4 +18,5 @@ CREATE DATABASE sdc;
 --   title VARCHAR(500),
 --   review_date DATE,
 --   product_id INT NOT NULL REFERENCES products(id)
+--   FOREIGN KEY (product_id) REFERENCES products(id)
 -- );
