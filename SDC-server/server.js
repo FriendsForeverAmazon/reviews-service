@@ -22,7 +22,6 @@ app.use(cors());
 // Routes
 // app.use('products', productsRouter);
 app.use('/reviews', reviewsRouter);
-// app.use('/reviews/product', )
 app.use((req, res) => {
   res.status(404).send('Not Found!');
 });

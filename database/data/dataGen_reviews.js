@@ -3,11 +3,11 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 
-const numberOfEntries = 10000000;
+const numberOfEntries = 100;
 const numOfReviews = 5 * numberOfEntries;
 let i = 1;
 
-const productStream = fs.createWriteStream('./review.tsv', { flags: 'w' });
+const productStream = fs.createWriteStream('./review234234.tsv', { flags: 'w' });
 
 let percentComplete = 0;
 console.time('Runtime');

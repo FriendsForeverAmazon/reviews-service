@@ -1,4 +1,4 @@
-const { product } = require('../models/product.model.js');
+const { Product } = require('../models/product.model.js');
 const { Review } = require('../models/review.model.js');
 const { connection } = require('../db/db');
 
@@ -89,7 +89,6 @@ const destroyReview = (req, res) => {
       res.status(500).send({ error: err });
     });
 };
-
 
 module.exports = {
   createReview,
