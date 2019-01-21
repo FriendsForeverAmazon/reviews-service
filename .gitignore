@@ -7,3 +7,4 @@ write.csv
 .write.csv.swp
 *.tsv
 newrelic_agent.log
+newrelix.js

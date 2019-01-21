@@ -1,7 +1,7 @@
 const { Review } = require('../models/review.model.js');
 // const { Product } = require('../models/product.model.js');
 // const { connection } = require('../db/db');
-var { cache } = require('../db/db.js');
+// var { cache } = require('../db/db.js');
 
 const createReview = (req, res) => {
   const { username, is_verified, review_text, score, found_helpful, title, review_date, product_id } = req.body;

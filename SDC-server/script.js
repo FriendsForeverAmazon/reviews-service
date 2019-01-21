@@ -29,7 +29,7 @@ const bias = () => {
 }
 
 const product = () => {
-  return (bias() ? genRandProductID(1, 1000) : genRandProductID(1, 5000000));
+  return (bias() ? genRandProductID(49999000, 50000000) : genRandProductID(1, 5000000));
 }
 
 export default function() {
