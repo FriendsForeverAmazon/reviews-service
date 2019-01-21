@@ -12,7 +12,7 @@
     "faker": "node database/fake_data_generator.js",
     "start": "webpack --mode production",
     "test": "jest",
-    "server": "nodemon server/index.js"
+    "server": "nodemon SDC-server/server.js"
   },
   "dependencies": {
     "async": "^2.6.1",
@@ -26,10 +26,12 @@
     "csv-write-stream": "^2.0.0",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
+    "ioredis": "^4.5.1",
     "mongoose": "^5.4.4",
     "mongoose-auto-increment": "^5.0.1",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
+    "newrelic": "^5.1.0",
     "path": "^0.12.7",
     "pg": "^7.7.1",
     "react": "^16.7.0",
