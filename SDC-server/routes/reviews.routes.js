@@ -1,14 +1,24 @@
 const router = require('express').Router();
+// Postgres Import
+// const {
+//   createReview,
+//   readReviewByID,
+//   readAllReviewsByProduct,
+//   updateReview,
+//   destroyReview,
+// } = require('../../database/PostresDatabase/controller/reviews.controller.js');
+
+// MongoDB Import
 const {
   createReview,
   readReviewByID,
   readAllReviewsByProduct,
   updateReview,
   destroyReview,
-} = require('../../database/PostresDatabase/controller/reviews.controller.js');
+} = require('../../database/MongoDatabase/controllers/reviews.controller.js');
 
 // Read all reviews based on a product ID
-router.get('/product/:productID', readAllReviewsByProduct);
+router.get('/product/:product_id', readAllReviewsByProduct);
 // Read a review based on the review ID - working
 router.get('/:reviewID', readReviewByID);
 // Create a review for a specific product ID - working
