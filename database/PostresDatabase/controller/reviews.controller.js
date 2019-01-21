@@ -25,8 +25,9 @@ const createReview = (req, res) => {
 
 // Read all reviews based on a product ID - works
 const readAllReviewsByProduct = (req, res) => {
-  const { productID } = req.params;
-  Review.findAll({ where: { product_id: [productID] } })
+  console.log(req.params);
+  const { product_id } = req.params;
+  Review.findAll({ where: { product_id } })
     .then((reviews) => {
       res.status(200).send(reviews);
     })
@@ -43,7 +44,7 @@ const readReviewByID = (req, res) => {
       if (oneReview) {
         res.send(oneReview);
       } else {
-        res.status(404).send();
+        res.status(404).send(oneReview);
       }
     })
     .catch((err) => {
