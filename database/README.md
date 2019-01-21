@@ -1,7 +1,13 @@
 ## CRUD Routes
 ### Postgres Routes
 
-router.get('/:review/:query', reviewsController.readReviewByID);
-router.post('/create/:review/:query', reviewsController.createReview);
-router.put('/update/:review/:oldProduct/:newProduct', reviewsController.updateReview);
-router.delete('/delete/:review/:query', reviewsController.destroyReview);
+#### Read all reviews based on a product ID
+router.get('/product/:productID', readAllReviewsByProduct);
+#### Read a review based on the review ID - working
+router.get('/:reviewID', readReviewByID);
+#### Create a review for a specific product ID - working
+router.post('/', createReview);
+#### Update a review based on a review ID
+router.patch('/:reviewID', updateReview);
+#### Destroy a review based on a review ID - working
+router.delete('/:reviewID', destroyReview);

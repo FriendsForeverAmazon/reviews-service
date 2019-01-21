@@ -38,7 +38,8 @@ const Review = connection.define('reviews', {
   },
 });
 
-Review.belongsTo(Product);
+// Review.belongsTo(Product);
+// look up to see if it is creating new column in reviews table
 
 Review.sync();
 

@@ -14,4 +14,4 @@ connection.query(
 );
 
 
-// this script doesn't work from this file, I have to copy this into postgres to get it to insert
+// this script doesn't work from this file, I have to copy this into postgres to get it to insert from the sdc db directly
