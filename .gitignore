@@ -7,3 +7,5 @@ write.csv
 .write.csv.swp
 product.tsv
 review.tsv
+.tsv
+newrelic_agent.log
