@@ -3,17 +3,18 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 
-const numberOfEntries = 100;
+const numberOfEntries = 1000;
 const numOfReviews = 5 * numberOfEntries;
 let i = 1;
 
-const productStream = fs.createWriteStream('./review234234.tsv', { flags: 'w' });
+const productStream = fs.createWriteStream('./review23.tsv', { flags: 'w' });
 
 let percentComplete = 0;
 console.time('Runtime');
 
 function writeData() {
   while (i <= numOfReviews) {
+    let _id = i;
     let username = faker.name.findName();
     let is_verified = (Math.random() > 0.1).toString();
     let review_text = faker.lorem.sentences();
@@ -23,7 +24,7 @@ function writeData() {
     let review_date = faker.date.between('2010-01-01', '2019-01-19').toISOString().split('Z')[0];
     let product_id = faker.random.number({ min: 1, max: numberOfEntries }).toString();
 
-    let reviewStr = username + '\t' + is_verified + '\t' + review_text + '\t' + score + '\t' + found_helpful + '\t' + title + '\t' + review_date + '\t' + product_id;
+    let reviewStr = _id + '\t' + username + '\t' + is_verified + '\t' + review_text + '\t' + score + '\t' + found_helpful + '\t' + title + '\t' + review_date + '\t' + product_id;
 
     if (i % (numOfReviews / 20) === 0 && i !== 0) {
       percentComplete += 5;
