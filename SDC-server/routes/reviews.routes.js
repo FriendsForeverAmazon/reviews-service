@@ -14,6 +14,7 @@ const {
   createReview,
   readReviewByID,
   readAllReviewsByProduct,
+  getAverageRating,
   updateReview,
   destroyReview,
 } = require('../../database/MongoDatabase/controllers/reviews.controller.js');
@@ -23,11 +24,8 @@ router.get('/product/:product_id', readAllReviewsByProduct);
 
 // Read a review based on the review ID - working
 router.get('/:reviewID', readReviewByID);
-// router.get('/:reviewID', async (req, res) => {
-//   redis.getFromCache(`/reviews/${req.params.reviewID}`)
-//     .then()
-// });
 
+router.get('/average/:productid', getAverageRating);
 
 // Create a review for a specific product ID - working
 router.post('/', createReview);

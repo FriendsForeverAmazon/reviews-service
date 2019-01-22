@@ -5,7 +5,6 @@ const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-// const productsRouter = require('../routes/products.routes.js');
 const reviewsRouter = require('./routes/reviews.routes.js');
 
 const app = express();
@@ -26,22 +25,6 @@ app.use('/reviews', reviewsRouter);
 app.use((req, res) => {
   res.status(404).send('Not Found!');
 });
-
-// Mongo Routes
-// app.use('/products', productsRouter);
-// app.use('/reviews', reviewsRouter);
-// app.use((req, res) => {
-//   res.status(404).send('Not found');
-// });
-
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
-
-// module.exports = app;
-// app.use((req, res) => {
-//   res.status(404).send('Not found');
-// });
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
