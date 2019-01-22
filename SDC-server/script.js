@@ -6,7 +6,7 @@ import { check } from "k6";
 
 export let options = {
   vus: 100,
-  duration: "60s",
+  duration: "180s",
   rps: 2000,
   // stages: [
   //   // { duration: "1m", target: 10 },

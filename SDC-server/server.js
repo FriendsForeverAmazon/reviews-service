@@ -1,9 +1,9 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const newRelic = require('newrelic');
 
 // const productsRouter = require('../routes/products.routes.js');
 const reviewsRouter = require('./routes/reviews.routes.js');
