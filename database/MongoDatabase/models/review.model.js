@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const reviewAutoIncrement = require('mongoose-auto-increment');
+// const reviewAutoIncrement = require('mongoose-auto-increment');
 const { connection } = require('../db/db');
 
 const ReviewSchema = new mongoose.Schema(
@@ -17,13 +17,13 @@ const ReviewSchema = new mongoose.Schema(
   }
 );
 
-reviewAutoIncrement.initialize(connection);
-ReviewSchema.plugin(reviewAutoIncrement.plugin, {
-  model: 'Review',
-  field: '_id',
-  startAt: 1,
-  incrementBy: 1,
-});
+// reviewAutoIncrement.initialize(connection);
+// ReviewSchema.plugin(reviewAutoIncrement.plugin, {
+//   model: 'Review',
+//   field: '_id',
+//   startAt: 1,
+//   incrementBy: 1,
+// });
 
 // I am a bit confident that this needs to be 'Review'
 const Review = connection.model('Review', ReviewSchema);

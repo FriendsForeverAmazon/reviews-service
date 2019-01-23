@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const productAutoIncrement = require('mongoose-auto-increment');
+// const productAutoIncrement = require('mongoose-auto-increment');
 const { connection } = require('../db/db');
 
-productAutoIncrement.initialize(connection);
+// productAutoIncrement.initialize(connection);
 
 const ProductSchema = new mongoose.Schema(
   {
@@ -10,12 +10,12 @@ const ProductSchema = new mongoose.Schema(
   }
 );
 
-ProductSchema.plugin(productAutoIncrement.plugin, {
-  model: 'Product',
-  field: '_id',
-  startAt: 1,
-  incrementBy: 1,
-});
+// ProductSchema.plugin(productAutoIncrement.plugin, {
+//   model: 'Product',
+//   field: '_id',
+//   startAt: 1,
+//   incrementBy: 1,
+// });
 
 const Product = connection.model('Product', ProductSchema);
 
