@@ -20,7 +20,7 @@ const {
 } = require('../../database/MongoDatabase/controllers/reviews.controller.js');
 
 // Read all reviews based on a product ID
-router.get('/product/:product_id', readAllReviewsByProduct);
+router.get('/all/:product_id', readAllReviewsByProduct);
 
 // Read a review based on the review ID - working
 router.get('/:reviewID', readReviewByID);
