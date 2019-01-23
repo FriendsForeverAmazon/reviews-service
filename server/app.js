@@ -31,7 +31,7 @@ app.get('/reviews/average/:productid', (req, res) => {
       res.send(error);
     } else {
       let totalScore = 0;
-      for (let i = 0; i < results.length; i ++) {
+      for (let i = 0; i < results.length; i++) {
         totalScore += results[i].score
       }
       const average = totalScore / results.length;
