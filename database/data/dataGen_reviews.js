@@ -3,11 +3,11 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 
-const numberOfEntries = 1000;
-const numOfReviews = 5 * numberOfEntries;
+const numberOfEntries = 10000000;
+const numOfReviews = 3 * numberOfEntries;
 let i = 1;
 
-const productStream = fs.createWriteStream('./review23.tsv', { flags: 'w' });
+const productStream = fs.createWriteStream('./review.tsv', { flags: 'w' });
 
 let percentComplete = 0;
 console.time('Runtime');
@@ -33,7 +33,7 @@ function writeData() {
     }
     i += 1;
 
-    if (!productStream.write(reviewStr + '\tNOW()\tNOW()\n')) {
+    if (!productStream.write(reviewStr + '\n')) {
       return;
     }
   }

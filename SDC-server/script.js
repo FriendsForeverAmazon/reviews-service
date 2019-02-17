@@ -24,7 +24,7 @@ const product = () => {
 export default function() {
   // 80% of traffic should go to 100 top products or something like that
   // console.log(product);
-  let res = http.get(`http://localhost:3001/reviews/product/${product()}`);
+  let res = http.get(`http://localhost:3001/reviews/all/${product()}`);
   check(res, {
     "is status 200": (r) => r.status === 200
   });

@@ -7,7 +7,7 @@ const Promise = require('bluebird');
 
 const redis = Promise.promisifyAll(require('redis'));
 
-const client = redis.createClient();
+const client = redis.createClient(6379, 'ip');
 
 client.onAsync('connect', () => console.log('REDIS CONNECTED'));
 
@@ -47,16 +47,6 @@ const readReviewByID = (req, res) => {
   });
 };
 
-// const readReviewByID = (req, res) => {
-//   Review.find({ _id: Number(req.params.reviewID) },
-//     (err, review) => {
-//       if (err) {
-//         return res.status(500).send(err);
-//       }
-//       return res.status(200).send(review);
-//     });
-// };
-
 const readAllReviewsByProduct = (req, res) => {
 
   client.get(`/reviews/all/${req.params.product_id}`, (err, result) => {
@@ -73,20 +63,6 @@ const readAllReviewsByProduct = (req, res) => {
     }
   });
 };
-
-// const readAllReviewsByProduct = (req, res) => {
-//   console.log(typeof req.params.product_id);
-//   // const { product_id } = req.params;
-//   Review.find({ product_id: Number(req.params.product_id) },
-//     (err, review) => {
-//       if (err) {
-//         return res.status(500).send(err);
-//       }
-//       console.log(review);
-//       return res.status(200).send(review);
-//     });
-
-// };
 
 const getAverageRating = (req, res) => {
   Review.find({ product_id: Number(req.params.product_id) },
