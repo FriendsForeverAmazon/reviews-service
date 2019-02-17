@@ -1,5 +1,3 @@
-// Crud stuff
-// I'd like to parametrize the input
 const { Pool, Client } = require('pg');
 const Promise = require('bluebird');
 

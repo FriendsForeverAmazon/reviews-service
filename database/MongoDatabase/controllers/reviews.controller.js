@@ -1,13 +1,11 @@
 const { Review } = require('../models/review.model.js');
-// const { Product } = require('../models/product.model.js');
-// const { connection } = require('../db/db');
-// const { cache } = require('../db/db.js');
+const { connection } = require('../db/db');
 
 const Promise = require('bluebird');
 
 const redis = Promise.promisifyAll(require('redis'));
 
-const client = redis.createClient(6379, 'ip');
+const client = redis.createClient(6379, '127.0.0.1');
 
 client.onAsync('connect', () => console.log('REDIS CONNECTED'));
 

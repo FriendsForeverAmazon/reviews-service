@@ -4,7 +4,6 @@ const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
 const reviewsRouter = require('./routes/reviews.routes.js');
 
 const app = express();
@@ -22,7 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Routes
-// app.use('products', productsRouter);
 app.use('/reviews', reviewsRouter);
 app.use((req, res) => {
   res.status(404).send('Not Found!');

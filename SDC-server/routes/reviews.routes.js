@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// const redis = require('../../database/redis/redis.js');
 // Postgres Import
 // const {
 //   createReview,
